@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BloodLeak - Personnalisation d'Apparence</title>
+    <!-- Google Font Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome 6 Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" class="hidden">
+        
+        <!-- Tech Floating Header matching bl_multicharacter -->
+        <div class="floating-header">
+            <div class="header-left">
+                <span class="pulse-dot"></span>
+                <span class="technical-meta">CREATION DU CITOYEN // MODULE D'APPARENCE</span>
+            </div>
+            <div class="header-right">
+                <div class="bloodleak-badge">
+                    <i class="fa-solid fa-dna"></i>
+                    <span>BLOODLEAK V2</span>
+                </div>
+                <span class="technical-meta">STATUS: EDITION ACTIF</span>
+            </div>
+        </div>
+
+        <!-- Left Creator Sidebar -->
+        <div class="sidebar-panel left">
+            
+            <div class="panel-header">
+                <span class="panel-tag">PERSONNALISATION</span>
+                <h1>APPARENCE</h1>
+            </div>
+
+            <!-- Categories Tabs -->
+            <div class="tabs-navigation">
+                <button class="tab-btn active" data-tab="identity" title="Génétique">
+                    <i class="fa-solid fa-venus-mars"></i>
+                    <span>GENRE</span>
+                </button>
+                <button class="tab-btn" data-tab="face_shape" title="Morphologie">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <span>VISAGE</span>
+                </button>
+                <button class="tab-btn" data-tab="hair_makeup" title="Coiffure & Style">
+                    <i class="fa-solid fa-scissors"></i>
+                    <span>COIFFURE</span>
+                </button>
+                <button class="tab-btn" data-tab="skin_details" title="Peau & Imperfections">
+                    <i class="fa-solid fa-hand-dots"></i>
+                    <span>PEAU</span>
+                </button>
+                <button class="tab-btn" data-tab="clothing_top" title="Haut & Buste">
+                    <i class="fa-solid fa-shirt"></i>
+                    <span>HAUT</span>
+                </button>
+                <button class="tab-btn" data-tab="clothing_bottom" title="Bas & Chaussures">
+                    <i class="fa-solid fa-socks"></i>
+                    <span>BAS</span>
+                </button>
+                <button class="tab-btn" data-tab="accessories" title="Accessoires">
+                    <i class="fa-solid fa-glasses"></i>
+                    <span>ACC.</span>
+                </button>
+            </div>
+
+            <!-- Scrollable Content Container -->
+            <div class="tab-contents-container">
+                
+                <!-- TAB 1: IDENTITÉ & GENRE -->
+                <div class="tab-content active" id="tab-identity">
+                    <div class="section-title">
+                        <i class="fa-solid fa-mars-and-venus"></i>
+                        <span>SÉLECTION DU SEXE</span>
+                    </div>
+
+                    <div class="gender-selector">
+                        <button class="gender-btn active" id="btn-male" data-sex="0">
+                            <i class="fa-solid fa-mars"></i>
+                            <span>HOMME</span>
+                        </button>
+                        <button class="gender-btn" id="btn-female" data-sex="1">
+                            <i class="fa-solid fa-venus"></i>
+                            <span>FEMME</span>
+                        </button>
+                    </div>
+
+                    <div class="section-title mt-4">
+                        <i class="fa-solid fa-dna"></i>
+                        <span>HÉRITAGE ET PARENTS</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Visage Père (Modèle)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="face_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="face_1" min="0" max="45" value="0" data-setting="face_1">
+                            <button class="step-btn step-up" data-target="face_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-face_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Visage Mère (Modèle)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="face_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="face_2" min="0" max="45" value="21" data-setting="face_2">
+                            <button class="step-btn step-up" data-target="face_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-face_2">21</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Ressemblance Visage (Père <-> Mère)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="face_mix"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="face_mix" min="0" max="100" value="50" data-setting="face_mix">
+                            <button class="step-btn step-up" data-target="face_mix"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-face_mix">50%</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Teint Peau Père</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="skin_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="skin_1" min="0" max="45" value="0" data-setting="skin_1">
+                            <button class="step-btn step-up" data-target="skin_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-skin_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Teint Peau Mère</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="skin_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="skin_2" min="0" max="45" value="21" data-setting="skin_2">
+                            <button class="step-btn step-up" data-target="skin_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-skin_2">21</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Ressemblance Peau (Père <-> Mère)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="skin_mix"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="skin_mix" min="0" max="100" value="50" data-setting="skin_mix">
+                            <button class="step-btn step-up" data-target="skin_mix"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-skin_mix">50%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 2: MORPHOLOGIE DU VISAGE -->
+                <div class="tab-content" id="tab-face_shape">
+                    <div class="section-title">
+                        <i class="fa-solid fa-lines-leaning"></i>
+                        <span>STRUCTURE DU NEZ</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Largeur du Nez</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="nose_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="nose_1" min="-10" max="10" value="0" data-setting="nose_1">
+                            <button class="step-btn step-up" data-target="nose_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-nose_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Hauteur du Nez</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="nose_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="nose_2" min="-10" max="10" value="0" data-setting="nose_2">
+                            <button class="step-btn step-up" data-target="nose_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-nose_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Longueur du Nez</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="nose_3"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="nose_3" min="-10" max="10" value="0" data-setting="nose_3">
+                            <button class="step-btn step-up" data-target="nose_3"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-nose_3">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Arête du Nez</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="nose_4"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="nose_4" min="-10" max="10" value="0" data-setting="nose_4">
+                            <button class="step-btn step-up" data-target="nose_4"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-nose_4">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Pointe du Nez</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="nose_5"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="nose_5" min="-10" max="10" value="0" data-setting="nose_5">
+                            <button class="step-btn step-up" data-target="nose_5"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-nose_5">0</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title mt-4">
+                        <i class="fa-solid fa-eye"></i>
+                        <span>SOURCILS & YEUX</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Hauteur des Sourcils</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="eyebrows_5"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="eyebrows_5" min="-10" max="10" value="0" data-setting="eyebrows_5">
+                            <button class="step-btn step-up" data-target="eyebrows_5"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-eyebrows_5">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Avancement des Sourcils</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="eyebrows_6"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="eyebrows_6" min="-10" max="10" value="0" data-setting="eyebrows_6">
+                            <button class="step-btn step-up" data-target="eyebrows_6"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-eyebrows_6">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Ouverture des Yeux</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="eye_squint"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="eye_squint" min="-10" max="10" value="0" data-setting="eye_squint">
+                            <button class="step-btn step-up" data-target="eye_squint"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-eye_squint">0</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title mt-4">
+                        <i class="fa-solid fa-square-full"></i>
+                        <span>POMMETTES, JOUES & MÂCHOIRE</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Hauteur des Pommettes</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="cheeks_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="cheeks_1" min="-10" max="10" value="0" data-setting="cheeks_1">
+                            <button class="step-btn step-up" data-target="cheeks_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-cheeks_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Largeur des Pommettes</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="cheeks_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="cheeks_2" min="-10" max="10" value="0" data-setting="cheeks_2">
+                            <button class="step-btn step-up" data-target="cheeks_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-cheeks_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Creux / Épaisseur des Joues</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="cheeks_3"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="cheeks_3" min="-10" max="10" value="0" data-setting="cheeks_3">
+                            <button class="step-btn step-up" data-target="cheeks_3"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-cheeks_3">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Épaisseur des Lèvres</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="lip_thickness"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="lip_thickness" min="-10" max="10" value="0" data-setting="lip_thickness">
+                            <button class="step-btn step-up" data-target="lip_thickness"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-lip_thickness">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Largeur de la Mâchoire</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="jaw_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="jaw_1" min="-10" max="10" value="0" data-setting="jaw_1">
+                            <button class="step-btn step-up" data-target="jaw_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-jaw_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Longueur du Menton</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="chin_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="chin_1" min="-10" max="10" value="0" data-setting="chin_1">
+                            <button class="step-btn step-up" data-target="chin_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-chin_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Largeur du Menton</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="chin_3"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="chin_3" min="-10" max="10" value="0" data-setting="chin_3">
+                            <button class="step-btn step-up" data-target="chin_3"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-chin_3">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Fossette du Menton</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="chin_4"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="chin_4" min="-10" max="10" value="0" data-setting="chin_4">
+                            <button class="step-btn step-up" data-target="chin_4"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-chin_4">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Épaisseur du Cou</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="neck_thickness"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="neck_thickness" min="-10" max="10" value="0" data-setting="neck_thickness">
+                            <button class="step-btn step-up" data-target="neck_thickness"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-neck_thickness">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 3: COIFFURE & STYLE -->
+                <div class="tab-content" id="tab-hair_makeup">
+                    <div class="section-title">
+                        <i class="fa-solid fa-scissors"></i>
+                        <span>CHEVEUX & COULEURS</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Coupe de Cheveux</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="hair_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="hair_1" min="0" max="80" value="0" data-setting="hair_1">
+                            <button class="step-btn step-up" data-target="hair_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-hair_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Couleur Principale</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="hair_color_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="hair_color_1" min="0" max="63" value="0" data-setting="hair_color_1">
+                            <button class="step-btn step-up" data-target="hair_color_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-hair_color_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Couleur des Reflets</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="hair_color_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="hair_color_2" min="0" max="63" value="0" data-setting="hair_color_2">
+                            <button class="step-btn step-up" data-target="hair_color_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-hair_color_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title mt-4">
+                        <i class="fa-solid fa-user-pen"></i>
+                        <span>PILOSITÉ & SOURCILS</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Style de Barbe</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="beard_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="beard_1" min="0" max="35" value="0" data-setting="beard_1">
+                            <button class="step-btn step-up" data-target="beard_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-beard_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Barbe</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="beard_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="beard_2" min="0" max="10" value="10" data-setting="beard_2">
+                            <button class="step-btn step-up" data-target="beard_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-beard_2">10</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Couleur Barbe</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="beard_3"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="beard_3" min="0" max="63" value="0" data-setting="beard_3">
+                            <button class="step-btn step-up" data-target="beard_3"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-beard_3">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Style Sourcils</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="eyebrows_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="eyebrows_1" min="0" max="35" value="0" data-setting="eyebrows_1">
+                            <button class="step-btn step-up" data-target="eyebrows_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-eyebrows_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Sourcils</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="eyebrows_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="eyebrows_2" min="0" max="10" value="10" data-setting="eyebrows_2">
+                            <button class="step-btn step-up" data-target="eyebrows_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-eyebrows_2">10</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Couleur des Yeux</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="eye_color"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="eye_color" min="0" max="31" value="0" data-setting="eye_color">
+                            <button class="step-btn step-up" data-target="eye_color"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-eye_color">0</span>
+                        </div>
+                    </div>
+
+                    <div class="section-title mt-4">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <span>MAQUILLAGE & COSMÉTIQUES</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Maquillage Yeux</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="makeup_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="makeup_1" min="0" max="75" value="0" data-setting="makeup_1">
+                            <button class="step-btn step-up" data-target="makeup_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-makeup_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Maquillage</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="makeup_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="makeup_2" min="0" max="10" value="0" data-setting="makeup_2">
+                            <button class="step-btn step-up" data-target="makeup_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-makeup_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Rouge à Lèvres</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="lipstick_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="lipstick_1" min="0" max="10" value="0" data-setting="lipstick_1">
+                            <button class="step-btn step-up" data-target="lipstick_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-lipstick_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Rouge à Lèvres</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="lipstick_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="lipstick_2" min="0" max="10" value="0" data-setting="lipstick_2">
+                            <button class="step-btn step-up" data-target="lipstick_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-lipstick_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Fard à Joues (Blush)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="blush_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="blush_1" min="0" max="35" value="0" data-setting="blush_1">
+                            <button class="step-btn step-up" data-target="blush_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-blush_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Fard à Joues</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="blush_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="blush_2" min="0" max="10" value="0" data-setting="blush_2">
+                            <button class="step-btn step-up" data-target="blush_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-blush_2">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 4: PEAU & IMPERFECTIONS -->
+                <div class="tab-content" id="tab-skin_details">
+                    <div class="section-title">
+                        <i class="fa-solid fa-hand-dots"></i>
+                        <span>IMPERFECTIONS DU VISAGE</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Boutons & Imperfections</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="blemishes_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="blemishes_1" min="0" max="25" value="0" data-setting="blemishes_1">
+                            <button class="step-btn step-up" data-target="blemishes_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-blemishes_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Imperfections</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="blemishes_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="blemishes_2" min="0" max="10" value="0" data-setting="blemishes_2">
+                            <button class="step-btn step-up" data-target="blemishes_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-blemishes_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Rides & Vieillissement</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="age_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="age_1" min="0" max="15" value="0" data-setting="age_1">
+                            <button class="step-btn step-up" data-target="age_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-age_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Rides</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="age_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="age_2" min="0" max="10" value="0" data-setting="age_2">
+                            <button class="step-btn step-up" data-target="age_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-age_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Teint & Rougeurs</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="complexion_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="complexion_1" min="0" max="12" value="0" data-setting="complexion_1">
+                            <button class="step-btn step-up" data-target="complexion_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-complexion_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Teint</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="complexion_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="complexion_2" min="0" max="10" value="0" data-setting="complexion_2">
+                            <button class="step-btn step-up" data-target="complexion_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-complexion_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Taches de Rousseur / Grains de Beauté</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="moles_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="moles_1" min="0" max="18" value="0" data-setting="moles_1">
+                            <button class="step-btn step-up" data-target="moles_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-moles_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Taches de Rousseur</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="moles_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="moles_2" min="0" max="10" value="0" data-setting="moles_2">
+                            <button class="step-btn step-up" data-target="moles_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-moles_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Dégâts Solaires</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="sun_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="sun_1" min="0" max="11" value="0" data-setting="sun_1">
+                            <button class="step-btn step-up" data-target="sun_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-sun_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Opacité Dégâts Solaires</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="sun_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="sun_2" min="0" max="10" value="0" data-setting="sun_2">
+                            <button class="step-btn step-up" data-target="sun_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-sun_2">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 5: HAUT & BUSTE -->
+                <div class="tab-content" id="tab-clothing_top">
+                    <div class="section-title">
+                        <i class="fa-solid fa-shirt"></i>
+                        <span>TENUE DU HAUT</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Veste / Haut (Torso)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="torso_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="torso_1" min="0" max="400" value="15" data-setting="torso_1">
+                            <button class="step-btn step-up" data-target="torso_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-torso_1">15</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Texture Veste</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="torso_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="torso_2" min="0" max="50" value="0" data-setting="torso_2">
+                            <button class="step-btn step-up" data-target="torso_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-torso_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">T-Shirt / Sous-Vêtement</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="tshirt_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="tshirt_1" min="0" max="300" value="15" data-setting="tshirt_1">
+                            <button class="step-btn step-up" data-target="tshirt_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-tshirt_1">15</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Texture T-Shirt</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="tshirt_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="tshirt_2" min="0" max="50" value="0" data-setting="tshirt_2">
+                            <button class="step-btn step-up" data-target="tshirt_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-tshirt_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Bras & Mains</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="arms"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="arms" min="0" max="200" value="15" data-setting="arms">
+                            <button class="step-btn step-up" data-target="arms"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-arms">15</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Texture Bras</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="arms_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="arms_2" min="0" max="50" value="0" data-setting="arms_2">
+                            <button class="step-btn step-up" data-target="arms_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-arms_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Décalcomanies / Badges</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="decals_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="decals_1" min="0" max="150" value="0" data-setting="decals_1">
+                            <button class="step-btn step-up" data-target="decals_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-decals_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Gilet Pare-Balles</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="bproof_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="bproof_1" min="0" max="100" value="0" data-setting="bproof_1">
+                            <button class="step-btn step-up" data-target="bproof_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-bproof_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Sac à Dos</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="bags_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="bags_1" min="0" max="100" value="0" data-setting="bags_1">
+                            <button class="step-btn step-up" data-target="bags_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-bags_1">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 6: BAS & CHAUSSURES -->
+                <div class="tab-content" id="tab-clothing_bottom">
+                    <div class="section-title">
+                        <i class="fa-solid fa-socks"></i>
+                        <span>PANTALON ET CHAUSSURES</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Pantalon</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="pants_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="pants_1" min="0" max="200" value="1" data-setting="pants_1">
+                            <button class="step-btn step-up" data-target="pants_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-pants_1">1</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Texture Pantalon</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="pants_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="pants_2" min="0" max="50" value="0" data-setting="pants_2">
+                            <button class="step-btn step-up" data-target="pants_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-pants_2">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Chaussures</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="shoes_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="shoes_1" min="0" max="200" value="1" data-setting="shoes_1">
+                            <button class="step-btn step-up" data-target="shoes_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-shoes_1">1</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Texture Chaussures</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="shoes_2"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="shoes_2" min="0" max="50" value="0" data-setting="shoes_2">
+                            <button class="step-btn step-up" data-target="shoes_2"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-shoes_2">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TAB 7: ACCESSOIRES & PROPS -->
+                <div class="tab-content" id="tab-accessories">
+                    <div class="section-title">
+                        <i class="fa-solid fa-glasses"></i>
+                        <span>ÉQUIPEMENTS & ACCESSOIRES</span>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Masque</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="mask_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="mask_1" min="0" max="200" value="0" data-setting="mask_1">
+                            <button class="step-btn step-up" data-target="mask_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-mask_1">0</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Casque / Chapeau (-1 = aucun)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="helmet_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="helmet_1" min="-1" max="200" value="-1" data-setting="helmet_1">
+                            <button class="step-btn step-up" data-target="helmet_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-helmet_1">-1</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Lunettes (-1 = aucune)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="glasses_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="glasses_1" min="-1" max="150" value="-1" data-setting="glasses_1">
+                            <button class="step-btn step-up" data-target="glasses_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-glasses_1">-1</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Boucles d'Oreilles (-1 = aucune)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="ears_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="ears_1" min="-1" max="50" value="-1" data-setting="ears_1">
+                            <button class="step-btn step-up" data-target="ears_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-ears_1">-1</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Montre (-1 = aucune)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="watches_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="watches_1" min="-1" max="50" value="-1" data-setting="watches_1">
+                            <button class="step-btn step-up" data-target="watches_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-watches_1">-1</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Bracelet (-1 = aucun)</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="bracelets_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="bracelets_1" min="-1" max="50" value="-1" data-setting="bracelets_1">
+                            <button class="step-btn step-up" data-target="bracelets_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-bracelets_1">-1</span>
+                        </div>
+                    </div>
+
+                    <div class="input-card">
+                        <div class="card-label">Chaîne / Collier</div>
+                        <div class="stepper-wrapper">
+                            <button class="step-btn step-down" data-target="chain_1"><i class="fa-solid fa-chevron-left"></i></button>
+                            <input type="range" class="creator-slider" id="chain_1" min="0" max="150" value="0" data-setting="chain_1">
+                            <button class="step-btn step-up" data-target="chain_1"><i class="fa-solid fa-chevron-right"></i></button>
+                            <span class="val-badge" id="val-chain_1">0</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Action Bar -->
+            <div class="creator-action-bar">
+                <button class="btn btn-outline" id="btn-cancel">
+                    <i class="fa-solid fa-xmark"></i> ANNULER
+                </button>
+                <button class="btn btn-primary" id="btn-save">
+                    <span class="btn-glow"></span>
+                    <span class="btn-text"><i class="fa-solid fa-check"></i> VALIDER & SAUVEGARDER</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Floating Camera & Rotation Control Panel (Bottom Center) -->
+        <div class="camera-controls-panel">
+            <div class="cam-group">
+                <span class="cam-label"><i class="fa-solid fa-video"></i> ZOOM CAMÉRA</span>
+                <div class="cam-buttons">
+                    <button class="cam-btn active" data-cam="head" title="Focus Visage">
+                        <i class="fa-solid fa-face-smile"></i> VISAGE
+                    </button>
+                    <button class="cam-btn" data-cam="torso" title="Focus Torse">
+                        <i class="fa-solid fa-shirt"></i> TORSE
+                    </button>
+                    <button class="cam-btn" data-cam="legs" title="Focus Jambes">
+                        <i class="fa-solid fa-shoe-prints"></i> JAMBES
+                    </button>
+                    <button class="cam-btn" data-cam="full" title="Corps Entier">
+                        <i class="fa-solid fa-child"></i> ENTIER
+                    </button>
+                </div>
+            </div>
+
+            <div class="divider-v"></div>
+
+            <div class="cam-group">
+                <span class="cam-label"><i class="fa-solid fa-rotate"></i> PIVOTER</span>
+                <div class="cam-buttons">
+                    <button class="cam-btn" id="rotate-left" title="Pivoter à gauche">
+                        <i class="fa-solid fa-arrow-rotate-left"></i>
+                    </button>
+                    <button class="cam-btn" id="rotate-right" title="Pivoter à droite">
+                        <i class="fa-solid fa-arrow-rotate-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Footer matching bl_multicharacter -->
+        <div class="floating-footer">
+            <div class="footer-left">
+                <span class="help-keybind"><b>CLIC GAUCHE</b> MODIFIER SLIDERS</span>
+                <span class="help-keybind"><b>BOUTONS</b> CAMERA / ROTATION</span>
+            </div>
+            <div class="footer-right">
+                <span class="technical-meta">BLOODLEAK RP // TOUS DROITS RÉSERVÉS</span>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
