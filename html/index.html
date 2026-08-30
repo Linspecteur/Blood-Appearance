@@ -626,93 +626,267 @@
                         <span>TENUE DU HAUT</span>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Veste / Haut (Torso)</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="torso_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="torso_1" min="0" max="400" value="15" data-setting="torso_1">
-                            <button class="step-btn step-up" data-target="torso_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-torso_1">15</span>
+                    <!-- VESTE / HAUT -->
+                    <div class="clothing-card" data-category="torso">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-shirt"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">VESTE / HAUT</span>
+                                    <span class="card-subtitle">Veste principale ou manteau</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-torso_1">#15</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="torso_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="torso_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="torso_1" min="0" max="400" value="15" data-setting="torso_1">
+                                    <button class="step-btn step-up" data-target="torso_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="torso_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-torso_1">15</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="torso_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-torso_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-torso_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-torso_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="torso_2" min="0" max="0" value="0" data-setting="torso_2">
+                                    <button class="step-btn step-up" data-target="torso_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-torso_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Texture Veste</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="torso_2"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="torso_2" min="0" max="50" value="0" data-setting="torso_2">
-                            <button class="step-btn step-up" data-target="torso_2"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-torso_2">0</span>
+                    <!-- T-SHIRT -->
+                    <div class="clothing-card" data-category="torso">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-vest-patches"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">T-SHIRT / SOUS-VÊTEMENT</span>
+                                    <span class="card-subtitle">Haut intérieur et couche de base</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-tshirt_1">#15</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="tshirt_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="tshirt_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="tshirt_1" min="0" max="300" value="15" data-setting="tshirt_1">
+                                    <button class="step-btn step-up" data-target="tshirt_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="tshirt_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-tshirt_1">15</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="tshirt_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-tshirt_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-tshirt_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-tshirt_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="tshirt_2" min="0" max="0" value="0" data-setting="tshirt_2">
+                                    <button class="step-btn step-up" data-target="tshirt_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-tshirt_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">T-Shirt / Sous-Vêtement</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="tshirt_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="tshirt_1" min="0" max="300" value="15" data-setting="tshirt_1">
-                            <button class="step-btn step-up" data-target="tshirt_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-tshirt_1">15</span>
+                    <!-- BRAS & GANTS -->
+                    <div class="clothing-card" data-category="torso">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-hand"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">BRAS & GANTS</span>
+                                    <span class="card-subtitle">Morphologie des bras et mitaines</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-arms">#15</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="arms" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="arms" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="arms" min="0" max="200" value="15" data-setting="arms">
+                                    <button class="step-btn step-up" data-target="arms" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="arms" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-arms">15</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="arms_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-arms_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-arms_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-arms_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="arms_2" min="0" max="0" value="0" data-setting="arms_2">
+                                    <button class="step-btn step-up" data-target="arms_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-arms_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Texture T-Shirt</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="tshirt_2"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="tshirt_2" min="0" max="50" value="0" data-setting="tshirt_2">
-                            <button class="step-btn step-up" data-target="tshirt_2"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-tshirt_2">0</span>
+                    <!-- DÉCALCOMANIES -->
+                    <div class="clothing-card" data-category="torso">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-award"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">ÉCUSSONS & EMBLEMES</span>
+                                    <span class="card-subtitle">Insignes, logos et décalcomanies</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-decals_1">#0</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="decals_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="decals_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="decals_1" min="0" max="150" value="0" data-setting="decals_1">
+                                    <button class="step-btn step-up" data-target="decals_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="decals_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-decals_1">0</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="decals_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-decals_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-decals_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-decals_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="decals_2" min="0" max="0" value="0" data-setting="decals_2">
+                                    <button class="step-btn step-up" data-target="decals_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-decals_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Bras & Mains</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="arms"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="arms" min="0" max="200" value="15" data-setting="arms">
-                            <button class="step-btn step-up" data-target="arms"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-arms">15</span>
+                    <!-- GILET PARE-BALLES -->
+                    <div class="clothing-card" data-category="torso">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">GILET TACTIQUE</span>
+                                    <span class="card-subtitle">Gilets pare-balles et holsters</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-bproof_1">#0</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="bproof_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="bproof_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="bproof_1" min="0" max="100" value="0" data-setting="bproof_1">
+                                    <button class="step-btn step-up" data-target="bproof_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="bproof_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-bproof_1">0</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="bproof_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-bproof_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-bproof_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-bproof_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="bproof_2" min="0" max="0" value="0" data-setting="bproof_2">
+                                    <button class="step-btn step-up" data-target="bproof_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-bproof_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Texture Bras</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="arms_2"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="arms_2" min="0" max="50" value="0" data-setting="arms_2">
-                            <button class="step-btn step-up" data-target="arms_2"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-arms_2">0</span>
+                    <!-- SAC À DOS -->
+                    <div class="clothing-card" data-category="torso">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">SAC À DOS / PARACHUTE</span>
+                                    <span class="card-subtitle">Sacs dorsaux et équipements portés</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-bags_1">#0</span>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="input-card">
-                        <div class="card-label">Décalcomanies / Badges</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="decals_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="decals_1" min="0" max="150" value="0" data-setting="decals_1">
-                            <button class="step-btn step-up" data-target="decals_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-decals_1">0</span>
-                        </div>
-                    </div>
-
-                    <div class="input-card">
-                        <div class="card-label">Gilet Pare-Balles</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="bproof_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="bproof_1" min="0" max="100" value="0" data-setting="bproof_1">
-                            <button class="step-btn step-up" data-target="bproof_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-bproof_1">0</span>
-                        </div>
-                    </div>
-
-                    <div class="input-card">
-                        <div class="card-label">Sac à Dos</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="bags_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="bags_1" min="0" max="100" value="0" data-setting="bags_1">
-                            <button class="step-btn step-up" data-target="bags_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-bags_1">0</span>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="bags_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="bags_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="bags_1" min="0" max="100" value="0" data-setting="bags_1">
+                                    <button class="step-btn step-up" data-target="bags_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="bags_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-bags_1">0</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="bags_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-bags_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-bags_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-bags_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="bags_2" min="0" max="0" value="0" data-setting="bags_2">
+                                    <button class="step-btn step-up" data-target="bags_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-bags_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -724,43 +898,91 @@
                         <span>PANTALON ET CHAUSSURES</span>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Pantalon</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="pants_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="pants_1" min="0" max="200" value="1" data-setting="pants_1">
-                            <button class="step-btn step-up" data-target="pants_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-pants_1">1</span>
+                    <!-- PANTALON -->
+                    <div class="clothing-card" data-category="legs">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-socks"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">PANTALON & BAS</span>
+                                    <span class="card-subtitle">Jean, jogging, bermuda, jupe</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-pants_1">#1</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="pants_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="pants_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="pants_1" min="0" max="200" value="1" data-setting="pants_1">
+                                    <button class="step-btn step-up" data-target="pants_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="pants_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-pants_1">1</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="pants_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-pants_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-pants_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-pants_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="pants_2" min="0" max="0" value="0" data-setting="pants_2">
+                                    <button class="step-btn step-up" data-target="pants_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-pants_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Texture Pantalon</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="pants_2"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="pants_2" min="0" max="50" value="0" data-setting="pants_2">
-                            <button class="step-btn step-up" data-target="pants_2"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-pants_2">0</span>
+                    <!-- CHAUSSURES -->
+                    <div class="clothing-card" data-category="legs">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-shoe-prints"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">CHAUSSURES</span>
+                                    <span class="card-subtitle">Baskets, bottes, talons, claquettes</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-shoes_1">#1</span>
+                            </div>
                         </div>
-                    </div>
-
-                    <div class="input-card">
-                        <div class="card-label">Chaussures</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="shoes_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="shoes_1" min="0" max="200" value="1" data-setting="shoes_1">
-                            <button class="step-btn step-up" data-target="shoes_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-shoes_1">1</span>
-                        </div>
-                    </div>
-
-                    <div class="input-card">
-                        <div class="card-label">Texture Chaussures</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="shoes_2"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="shoes_2" min="0" max="50" value="0" data-setting="shoes_2">
-                            <button class="step-btn step-up" data-target="shoes_2"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-shoes_2">0</span>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="shoes_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="shoes_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="shoes_1" min="0" max="200" value="1" data-setting="shoes_1">
+                                    <button class="step-btn step-up" data-target="shoes_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="shoes_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-shoes_1">1</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="shoes_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-shoes_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-shoes_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-shoes_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="shoes_2" min="0" max="0" value="0" data-setting="shoes_2">
+                                    <button class="step-btn step-up" data-target="shoes_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-shoes_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -772,73 +994,311 @@
                         <span>ÉQUIPEMENTS & ACCESSOIRES</span>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Masque</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="mask_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="mask_1" min="0" max="200" value="0" data-setting="mask_1">
-                            <button class="step-btn step-up" data-target="mask_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-mask_1">0</span>
+                    <!-- MASQUE -->
+                    <div class="clothing-card" data-category="head">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-masks-theater"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">MASQUE</span>
+                                    <span class="card-subtitle">Masques et cagoules</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-mask_1">#0</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="mask_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="mask_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="mask_1" min="0" max="200" value="0" data-setting="mask_1">
+                                    <button class="step-btn step-up" data-target="mask_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="mask_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-mask_1">0</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="mask_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-mask_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-mask_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-mask_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="mask_2" min="0" max="0" value="0" data-setting="mask_2">
+                                    <button class="step-btn step-up" data-target="mask_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-mask_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Casque / Chapeau (-1 = aucun)</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="helmet_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="helmet_1" min="-1" max="200" value="-1" data-setting="helmet_1">
-                            <button class="step-btn step-up" data-target="helmet_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-helmet_1">-1</span>
+                    <!-- CASQUE / CHAPEAU -->
+                    <div class="clothing-card" data-category="head">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-hat-cowboy"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">CASQUE & CHAPEAU</span>
+                                    <span class="card-subtitle">Casquettes, casques, bobs (-1 = Aucun)</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-helmet_1">Aucun</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="helmet_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="helmet_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="helmet_1" min="-1" max="200" value="-1" data-setting="helmet_1">
+                                    <button class="step-btn step-up" data-target="helmet_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="helmet_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-helmet_1">-1</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="helmet_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-helmet_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-helmet_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-helmet_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="helmet_2" min="0" max="0" value="0" data-setting="helmet_2">
+                                    <button class="step-btn step-up" data-target="helmet_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-helmet_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Lunettes (-1 = aucune)</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="glasses_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="glasses_1" min="-1" max="150" value="-1" data-setting="glasses_1">
-                            <button class="step-btn step-up" data-target="glasses_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-glasses_1">-1</span>
+                    <!-- LUNETTES -->
+                    <div class="clothing-card" data-category="head">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-glasses"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">LUNETTES</span>
+                                    <span class="card-subtitle">Solaires et correctrices (-1 = Aucune)</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-glasses_1">Aucune</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="glasses_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="glasses_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="glasses_1" min="-1" max="150" value="-1" data-setting="glasses_1">
+                                    <button class="step-btn step-up" data-target="glasses_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="glasses_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-glasses_1">-1</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="glasses_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-glasses_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-glasses_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-glasses_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="glasses_2" min="0" max="0" value="0" data-setting="glasses_2">
+                                    <button class="step-btn step-up" data-target="glasses_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-glasses_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Boucles d'Oreilles (-1 = aucune)</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="ears_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="ears_1" min="-1" max="50" value="-1" data-setting="ears_1">
-                            <button class="step-btn step-up" data-target="ears_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-ears_1">-1</span>
+                    <!-- BOUCLES D'OREILLES -->
+                    <div class="clothing-card" data-category="head">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-gem"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">BOUCLES D'OREILLES</span>
+                                    <span class="card-subtitle">Bijoux d'oreilles (-1 = Aucun)</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-ears_1">Aucun</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="ears_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="ears_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="ears_1" min="-1" max="50" value="-1" data-setting="ears_1">
+                                    <button class="step-btn step-up" data-target="ears_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="ears_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-ears_1">-1</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="ears_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-ears_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-ears_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-ears_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="ears_2" min="0" max="0" value="0" data-setting="ears_2">
+                                    <button class="step-btn step-up" data-target="ears_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-ears_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Montre (-1 = aucune)</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="watches_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="watches_1" min="-1" max="50" value="-1" data-setting="watches_1">
-                            <button class="step-btn step-up" data-target="watches_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-watches_1">-1</span>
+                    <!-- MONTRE -->
+                    <div class="clothing-card" data-category="torso">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-clock"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">MONTRE</span>
+                                    <span class="card-subtitle">Montres poignet gauche (-1 = Aucune)</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-watches_1">Aucune</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="watches_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="watches_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="watches_1" min="-1" max="50" value="-1" data-setting="watches_1">
+                                    <button class="step-btn step-up" data-target="watches_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="watches_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-watches_1">-1</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="watches_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-watches_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-watches_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-watches_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="watches_2" min="0" max="0" value="0" data-setting="watches_2">
+                                    <button class="step-btn step-up" data-target="watches_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-watches_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Bracelet (-1 = aucun)</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="bracelets_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="bracelets_1" min="-1" max="50" value="-1" data-setting="bracelets_1">
-                            <button class="step-btn step-up" data-target="bracelets_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-bracelets_1">-1</span>
+                    <!-- BRACELET -->
+                    <div class="clothing-card" data-category="torso">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-ring"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">BRACELET</span>
+                                    <span class="card-subtitle">Bracelets poignet droit (-1 = Aucun)</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-bracelets_1">Aucun</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="bracelets_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="bracelets_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="bracelets_1" min="-1" max="50" value="-1" data-setting="bracelets_1">
+                                    <button class="step-btn step-up" data-target="bracelets_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="bracelets_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-bracelets_1">-1</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="bracelets_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-bracelets_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-bracelets_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-bracelets_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="bracelets_2" min="0" max="0" value="0" data-setting="bracelets_2">
+                                    <button class="step-btn step-up" data-target="bracelets_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-bracelets_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="input-card">
-                        <div class="card-label">Chaîne / Collier</div>
-                        <div class="stepper-wrapper">
-                            <button class="step-btn step-down" data-target="chain_1"><i class="fa-solid fa-chevron-left"></i></button>
-                            <input type="range" class="creator-slider" id="chain_1" min="0" max="150" value="0" data-setting="chain_1">
-                            <button class="step-btn step-up" data-target="chain_1"><i class="fa-solid fa-chevron-right"></i></button>
-                            <span class="val-badge" id="val-chain_1">0</span>
+                    <!-- CHAÎNE / COLLIER -->
+                    <div class="clothing-card" data-category="torso">
+                        <div class="clothing-card-header">
+                            <div class="card-icon-title">
+                                <div class="card-icon"><i class="fa-solid fa-link"></i></div>
+                                <div class="card-info">
+                                    <span class="card-title">CHAÎNE & COLLIER</span>
+                                    <span class="card-subtitle">Pendentifs, chaînes et cravates</span>
+                                </div>
+                            </div>
+                            <div class="card-meta">
+                                <span class="model-badge" id="badge-chain_1">#0</span>
+                            </div>
+                        </div>
+                        <div class="clothing-control-body">
+                            <div class="control-row">
+                                <span class="control-row-label"><i class="fa-solid fa-layer-group"></i> Modèle</span>
+                                <div class="stepper-wrapper dual-stepper">
+                                    <button class="step-btn step-fast step-down" data-target="chain_1" data-step="10" title="Reculer de 10"><i class="fa-solid fa-angles-left"></i></button>
+                                    <button class="step-btn step-down" data-target="chain_1" data-step="1" title="Précédent"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <input type="range" class="creator-slider" id="chain_1" min="0" max="150" value="0" data-setting="chain_1">
+                                    <button class="step-btn step-up" data-target="chain_1" data-step="1" title="Suivant"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <button class="step-btn step-fast step-up" data-target="chain_1" data-step="10" title="Avancer de 10"><i class="fa-solid fa-angles-right"></i></button>
+                                    <span class="val-badge count-badge" id="val-chain_1">0</span>
+                                </div>
+                            </div>
+                            <div class="control-row texture-row">
+                                <span class="control-row-label"><i class="fa-solid fa-palette"></i> Couleur / Texture</span>
+                                <div class="stepper-wrapper texture-stepper-box">
+                                    <button class="step-btn step-down" data-target="chain_2" data-step="1"><i class="fa-solid fa-chevron-left"></i></button>
+                                    <div class="texture-indicator" id="box-chain_2">
+                                        <span class="tex-txt">Variante</span>
+                                        <span class="tex-current" id="val-chain_2">0</span>
+                                        <span class="tex-divider">/</span>
+                                        <span class="tex-total" id="max-chain_2">0</span>
+                                    </div>
+                                    <input type="range" class="creator-slider texture-slider" id="chain_2" min="0" max="0" value="0" data-setting="chain_2">
+                                    <button class="step-btn step-up" data-target="chain_2" data-step="1"><i class="fa-solid fa-chevron-right"></i></button>
+                                    <span class="unique-badge" id="unique-chain_2"><i class="fa-solid fa-shield-check"></i> Unique</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

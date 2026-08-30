@@ -368,6 +368,226 @@ body, html {
     color: #ffffff;
 }
 
+/* ==========================================================================
+   DELUXE CLOTHING CARDS (Modern Grouped Cards & Dual Steppers)
+   ========================================================================== */
+.clothing-card {
+    background: linear-gradient(135deg, rgba(16, 16, 20, 0.75) 0%, rgba(10, 10, 13, 0.85) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    border-radius: 12px;
+    padding: 12px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: var(--transition-premium);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.clothing-card:hover {
+    border-color: rgba(229, 9, 20, 0.3);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(229, 9, 20, 0.06);
+    background: linear-gradient(135deg, rgba(20, 20, 26, 0.8) 0%, rgba(12, 12, 16, 0.9) 100%);
+}
+
+.clothing-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.card-icon-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: rgba(229, 9, 20, 0.12);
+    border: 1px solid rgba(229, 9, 20, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff3340;
+    font-size: 13px;
+    box-shadow: 0 0 10px rgba(229, 9, 20, 0.1);
+}
+
+.card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
+.card-title {
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.card-subtitle {
+    font-size: 9.5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.model-badge {
+    background: rgba(229, 9, 20, 0.15);
+    border: 1px solid rgba(229, 9, 20, 0.35);
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    box-shadow: 0 0 8px rgba(229, 9, 20, 0.15);
+}
+
+.clothing-control-body {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.control-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.control-row-label {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.control-row-label i {
+    font-size: 9px;
+    color: var(--accent);
+}
+
+/* Dual Stepper (Fast ±10 and Regular ±1 buttons) */
+.dual-stepper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.step-fast {
+    background: rgba(229, 9, 20, 0.08);
+    border-color: rgba(229, 9, 20, 0.2);
+    color: #ff5560;
+    font-size: 8px;
+}
+
+.step-fast:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #ffffff;
+}
+
+.count-badge {
+    min-width: 40px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Texture Row Box */
+.texture-stepper-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 0, 0, 0.35);
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.texture-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 10px;
+    font-weight: 800;
+    color: #ffffff;
+    min-width: 90px;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 3px 8px;
+    border-radius: 6px;
+}
+
+.tex-txt {
+    font-size: 8.5px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-right: 2px;
+}
+
+.tex-current {
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.tex-divider {
+    color: var(--text-muted);
+    font-size: 10px;
+}
+
+.tex-total {
+    color: var(--text-secondary);
+    font-size: 11px;
+}
+
+.texture-slider {
+    flex: 1;
+}
+
+.unique-badge {
+    display: none;
+    align-items: center;
+    gap: 5px;
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #4ade80;
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.25);
+    padding: 3px 9px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+}
+
+.unique-badge.active {
+    display: inline-flex;
+}
+
+.texture-stepper-box.is-unique .texture-indicator,
+.texture-stepper-box.is-unique .texture-slider,
+.texture-stepper-box.is-unique .step-btn {
+    display: none;
+}
+
+.texture-stepper-box.is-unique {
+    justify-content: center;
+    background: rgba(74, 222, 128, 0.04);
+    border-color: rgba(74, 222, 128, 0.15);
+}
+
 /* Action Bar */
 .creator-action-bar {
     padding: 16px 22px;

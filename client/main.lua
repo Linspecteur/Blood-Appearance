@@ -279,6 +279,11 @@ function ApplySkin(ped, skin)
         SetPedComponentVariation(ped, v.id, draw, tex, 2)
     end
 
+    -- Parachute / Bag: If bags_1 is 0 or nil, explicitly enforce empty bag slot
+    if not skin.bags_1 or skin.bags_1 == 0 then
+        SetPedComponentVariation(ped, 5, 0, 0, 2)
+    end
+
     -- Apply Props
     for k, v in pairs(skinProps) do
         local draw = skin[k] or -1
@@ -293,16 +298,34 @@ end
 
 -- Get Component & Texture limits for ped
 local function getMaxValues(ped)
+    if not ped or not DoesEntityExist(ped) then ped = PlayerPedId() end
     local limits = {}
+
     for k, v in pairs(skinComponents) do
-        limits[k] = GetNumberOfPedDrawableVariations(ped, v.id) - 1
-        limits[v.texture] = GetNumberOfPedTextureVariations(ped, v.id, GetPedDrawableVariation(ped, v.id)) - 1
+        local drawCount = GetNumberOfPedDrawableVariations(ped, v.id)
+        limits[k] = math.max(0, drawCount - 1)
+        
+        local currentDraw = currentSkin[k] or 0
+        local texCount = GetNumberOfPedTextureVariations(ped, v.id, currentDraw)
+        limits[v.texture] = math.max(0, texCount - 1)
     end
+
     for k, v in pairs(skinProps) do
-        limits[k] = GetNumberOfPedPropDrawableVariations(ped, v.id) - 1
-        limits[v.texture] = GetNumberOfPedPropTextureVariations(ped, v.id, GetPedPropIndexFromModel(ped, v.id)) - 1
+        local propCount = GetNumberOfPedPropDrawableVariations(ped, v.id)
+        limits[k] = math.max(-1, propCount - 1)
+        
+        local currentProp = currentSkin[k] or -1
+        if currentProp and currentProp >= 0 then
+            local texCount = GetNumberOfPedPropTextureVariations(ped, v.id, currentProp)
+            limits[v.texture] = math.max(0, texCount - 1)
+        else
+            limits[v.texture] = 0
+        end
     end
-    limits['hair_1'] = GetNumberOfPedDrawableVariations(ped, 2) - 1
+
+    limits['hair_1'] = math.max(0, GetNumberOfPedDrawableVariations(ped, 2) - 1)
+    limits['hair_2'] = math.max(0, GetNumberOfPedTextureVariations(ped, 2, currentSkin['hair_1'] or 0) - 1)
+
     return limits
 end
 
@@ -370,14 +393,36 @@ end
 -- NUI Callbacks
 RegisterNUICallback('updateComponent', function(data, cb)
     if data.setting and data.value ~= nil then
-        currentSkin[data.setting] = data.value
-        ApplySkin(PlayerPedId(), currentSkin)
-
-        -- Update texture limit dynamically
         local ped = PlayerPedId()
+        currentSkin[data.setting] = data.value
+
+        -- If drawable or prop changed, dynamically clamp associated texture
+        if skinComponents[data.setting] then
+            local texKey = skinComponents[data.setting].texture
+            local compId = skinComponents[data.setting].id
+            local maxTex = math.max(0, GetNumberOfPedTextureVariations(ped, compId, data.value) - 1)
+            if (currentSkin[texKey] or 0) > maxTex then
+                currentSkin[texKey] = 0
+            end
+        elseif skinProps[data.setting] then
+            local texKey = skinProps[data.setting].texture
+            local propId = skinProps[data.setting].id
+            local maxTex = 0
+            if data.value >= 0 then
+                maxTex = math.max(0, GetNumberOfPedPropTextureVariations(ped, propId, data.value) - 1)
+            end
+            if (currentSkin[texKey] or 0) > maxTex then
+                currentSkin[texKey] = 0
+            end
+        end
+
+        ApplySkin(ped, currentSkin)
+
+        -- Send updated limits and synced skin data dynamically
         SendNUIMessage({
             action = "setMaxValues",
-            limits = getMaxValues(ped)
+            limits = getMaxValues(ped),
+            skin = currentSkin
         })
     end
     cb('ok')
@@ -438,6 +483,14 @@ RegisterNUICallback('saveSkin', function(data, cb)
     DisplayRadar(true)
     DisplayHud(true)
     hideCustomHUDs(false)
+
+    -- Force re-application of current settings to ensure proper ped components
+    local ped = PlayerPedId()
+    ApplySkin(ped, currentSkin)
+
+    if not currentSkin.bags_1 or currentSkin.bags_1 == 0 then
+        SetPedComponentVariation(ped, 5, 0, 0, 2)
+    end
 
     TriggerServerEvent('esx_skin:save', currentSkin)
     TriggerServerEvent('bl_appearance:saveSkin', currentSkin)
@@ -577,3 +630,21 @@ CreateThread(function()
         end
     end
 end)
+
+-- Background thread to prevent GTA native parachute auto-attaching if no bag is equipped
+CreateThread(function()
+    SetAutoGiveParachuteWhenEnterPlane(PlayerId(), false)
+    while true do
+        Wait(2000)
+        local ped = PlayerPedId()
+        if DoesEntityExist(ped) and not isMenuOpen then
+            if not currentSkin or not currentSkin.bags_1 or currentSkin.bags_1 == 0 then
+                if GetPedDrawableVariation(ped, 5) ~= 0 then
+                    SetPedComponentVariation(ped, 5, 0, 0, 2)
+                end
+            end
+        end
+    end
+end)
+
+
